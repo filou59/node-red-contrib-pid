@@ -226,8 +226,12 @@ module.exports = function(RED) {
         power = 1.0;
       }
       node.last_power = power;
+      //node.prop_band
+      //node.t_integral
+      //node.t_derivative
+      //node.enable
       ans =  {payload: power, pv: node.pv, setpoint: node.setpoint, proportional: proportional, integral: node.integral, 
-        derivative: node.derivative, smoothed_value: node.smoothed_value}
+        derivative: node.derivative, smoothed_value: node.smoothed_value, prop_band:node.prop_band , t_integral: node.t_integral, t_derivative: node.t_derivative, enable: node.enable}
       return ans;
     }
   }
